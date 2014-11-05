@@ -116,7 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 TERM=gnome-256color
-PATH=$PATH:$HOME/.node/bin
+
+PATH=$PATH:$HOME/.composer/vendor/bin
 echo "Welcome to"
 echo "---------------------------------"
 echo "  ___ __  _ __  __ ___ ___  __   "

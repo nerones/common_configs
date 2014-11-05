@@ -17,7 +17,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
