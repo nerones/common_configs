@@ -35,3 +35,6 @@ set expandtab       " Expand TABs to spaces
 
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
