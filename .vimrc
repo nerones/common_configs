@@ -17,7 +17,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
@@ -38,3 +38,8 @@ set smarttab
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" nmap ,f :FufFileWithCurrentBufferDir<CR>
+nmap ,f :FufCoverageFile<CR>
+nmap ,b :FufBuffer<CR>
+nmap ,t :FufTaggedFile<CR>
