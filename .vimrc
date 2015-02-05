@@ -17,12 +17,12 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder vim-gitgutter Emmet surround MatchTag
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
 set bg=dark
-colorscheme gruvbox
+colorscheme jellybeans
 set spelllang=es
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
@@ -43,3 +43,15 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap ,f :FufCoverageFile<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" filetype plugin on
+" au FileType php set omnifunc=phpcomplete#CompletePHP
+
+" You might also find this useful
+let php_sql_query=1
+let php_htmlInStrings=1
+" Activa snippets de html en php
+au BufRead,BufNewFile *.php set ft=php.html
