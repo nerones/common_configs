@@ -17,7 +17,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder vim-gitgutter Emmet surround MatchTag
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder vim-gitgutter Emmet surround MatchTag indentLine
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
@@ -44,14 +44,12 @@ nmap ,f :FufCoverageFile<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
 
-filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-
+set nowrap
+set hlsearch
 " filetype plugin on
 " au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " You might also find this useful
 let php_sql_query=1
 let php_htmlInStrings=1
-" Activa snippets de html en php
-au BufRead,BufNewFile *.php set ft=php.html
