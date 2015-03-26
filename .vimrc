@@ -53,3 +53,14 @@ set hlsearch
 " You might also find this useful
 let php_sql_query=1
 let php_htmlInStrings=1
+
+" Snippets variables
+let g:snips_author='Nelson Efrain A. Cruz'
+let g:author='Nelson Efrain A. Cruz'
+let g:snips_email='neac03@gmail.com'
+let g:email='neac03@gmail.com'
+let g:snips_github='https://github.com/nerones'
+let g:github='https://github.com/nerones'
+
+set wildmode=longest:full
+set wildmenu
