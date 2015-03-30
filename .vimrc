@@ -17,7 +17,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder vim-gitgutter Emmet surround MatchTag indentLine
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder vim-gitgutter Emmet surround MatchTag vim-airline
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
@@ -64,3 +64,7 @@ let g:github='https://github.com/nerones'
 
 set wildmode=longest:full
 set wildmenu
+
+let g:airline_powerline_fonts = 1
+set laststatus=2
+let g:airline_enable_branch = 1
