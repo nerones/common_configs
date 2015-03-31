@@ -24,18 +24,19 @@ set t_Co=256
 set bg=dark
 colorscheme jellybeans
 set spelllang=es
-set tabstop=4       " The width of a TAB is set to 4.
+" set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
 
-set shiftwidth=4    " Indents will have a width of 4
-set softtabstop=4   " Sets the number of columns for a TAB
+set shiftwidth=2    " Indents will have a width of 4
+set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
-
+set autoindent
+set smartindent
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -49,10 +50,6 @@ set nowrap
 set hlsearch
 " filetype plugin on
 " au FileType php set omnifunc=phpcomplete#CompletePHP
-
-" You might also find this useful
-let php_sql_query=1
-let php_htmlInStrings=1
 
 " Snippets variables
 let g:snips_author='Nelson Efrain A. Cruz'
