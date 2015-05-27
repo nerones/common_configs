@@ -1,6 +1,5 @@
 " put this line first in ~/.vimrc
 set nocompatible | filetype indent plugin on | syn on
-
 fun! SetupVAM()
   let c = get(g:, 'vim_addon_manager', {})
   let g:vim_addon_manager = c
@@ -44,6 +43,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap ,f :FufCoverageFile<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
+let g:fuf_file_exclude         = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
+let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
 
 set omnifunc=syntaxcomplete#Complete
 set nowrap
@@ -61,7 +62,9 @@ let g:github='https://github.com/nerones'
 
 set wildmode=longest:full
 set wildmenu
-
+set incsearch
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
+
+set foldmethod=syntax
