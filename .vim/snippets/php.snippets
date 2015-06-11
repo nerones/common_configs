@@ -4,3 +4,8 @@ snippet textfield
 	  {!! Form::label('${1:name}', '${2}:') !!}
 	  {!! Form::text('$1', null, ['class' => 'form-control']) !!}
 	</div>
+snippet selectfield
+	<div class="form-group">
+	  {!! Form::label('${1:name}', '${2}:') !!}
+	  {!! Form::select('$1', ${0:[]}, null, ['class' => 'form-control']) !!}
+	</div>
