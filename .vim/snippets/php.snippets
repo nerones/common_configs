@@ -9,3 +9,7 @@ snippet selectfield
 	  {!! Form::label('${1:name}', '${2}:') !!}
 	  {!! Form::select('$1', ${0:[]}, null, ['class' => 'form-control']) !!}
 	</div>
+snippet submit
+	<div class="form-group">
+	  {!! Form::submit('${1:Guardar}', ['class' => 'btn btn-default']) !!}
+	</div>
