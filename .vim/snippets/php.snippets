@@ -7,7 +7,7 @@ snippet textfield
 snippet selectfield
 	<div class="form-group">
 	  {!! Form::label('${1:name}', '${2}:') !!}
-	  {!! Form::select('$1', ${0:[]}, null, ['class' => 'form-control']) !!}
+	  {!! Form::select('$1', ['' => 'Seleccione... '] + ${0:[]}, null, ['class' => 'form-control']) !!}
 	</div>
 snippet submit
 	<div class="form-group">

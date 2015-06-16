@@ -7,3 +7,8 @@ set foldmethod=syntax
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 
+let g:syntastic_php_phpcs_args='--standard=PSR2'
+
+"php namespaces config
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>

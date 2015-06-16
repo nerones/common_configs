@@ -16,7 +16,8 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less
+VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic
+
 " use <c-x><c-p> to complete plugin names
 
 set t_Co=256
@@ -68,3 +69,13 @@ set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 
 set foldmethod=syntax
+
+" Syntastic configs
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
