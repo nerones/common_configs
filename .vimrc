@@ -20,6 +20,10 @@ VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-exec
 
 " use <c-x><c-p> to complete plugin names
 
+" Change the mapleader from \ to ,
+let mapleader=","
+let maplocalleader="\\"
+
 set t_Co=256
 set bg=dark
 colorscheme jellybeans
@@ -37,6 +41,10 @@ set expandtab       " Expand TABs to spaces
 set smarttab
 set autoindent
 set smartindent
+set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
+                                "    paste mode, where you can paste mass data
+                                "    that won't be autoindented
+
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -69,6 +77,38 @@ set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 
 set foldmethod=syntax
+set foldlevelstart=99           " start out with everything unfolded
+
+" NERDTree settings {{{
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+nnoremap <leader>N :NERDTreeClose<CR>
+
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+
+" Show hidden files, too
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+
+" Quit on opening files from the tree
+let NERDTreeQuitOnOpen=1
+
+" Highlight the selected entry in the tree
+let NERDTreeHighlightCursorline=1
+
+" Use a single click to fold/unfold directories and a double click to open
+" files
+let NERDTreeMouseMode=2
+
+" Don't display these kinds of files
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+            \ '\.o$', '\.so$', '\.egg$', '^\.git$', '__pycache__', '\.DS_Store' ]
+
+" }}}
 
 " Syntastic configs
 set statusline+=%#warningmsg#
@@ -76,6 +116,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
