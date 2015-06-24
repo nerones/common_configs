@@ -33,7 +33,7 @@ let maplocalleader="\\"
 
 set t_Co=256
 set bg=dark
-colorscheme candy
+colorscheme gruvbox
 set spelllang=es
 " set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
