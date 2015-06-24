@@ -31,6 +31,10 @@ VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-exec
 let mapleader=","
 let maplocalleader="\\"
 
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 set t_Co=256
 set bg=dark
 colorscheme gruvbox
