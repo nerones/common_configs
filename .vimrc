@@ -22,7 +22,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-addon-commenting vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic
+VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter
 
 
 " use <c-x><c-p> to complete plugin names
@@ -119,4 +119,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+" Permite correr mas de un checker a la ves
+" let g:syntastic_aggregate_errors = 1

@@ -13,3 +13,37 @@ snippet submit
 	<div class="form-group">
 	  {!! Form::submit('${1:Guardar}', ['class' => 'btn btn-default']) !!}
 	</div>
+snippet citextarea
+	<div class="fila">
+		<label for="${1:name}">${2}</label>
+		<textarea
+		  id="$1"
+		  name="$1"
+		  cols="80"
+		  rows="5"
+		  placeholder="${3}"
+		  <?=classRegValidation('$1')?>><?= $reg['$1']?></textarea>
+	</div>
+snippet citextfield
+	<div class="fila">
+		<label for="${1:name}">${2}</label>
+		<input id="$1"
+		  type="text"
+		  name="$1"
+		  placeholder="${3}"
+		  value="<?= $reg['$1']?>"
+		  <?=classRegValidation('$1')?>>
+	</div>
+snippet ciselect
+	<div class="fila">
+		<label for="${1:name}">${2}</label>
+		<?php
+			echo form_dropdown(
+			    '$1',
+				['' => 'Seleccione...'] + $${3:lista},
+				$reg['$1'],
+				'id="$1"'.classRegValidation('$1')
+			);
+		?>
+	</div>
+
