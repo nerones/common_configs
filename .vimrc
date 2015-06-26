@@ -87,8 +87,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 
-set foldmethod=syntax
-set foldlevelstart=99           " start out with everything unfolded
+" set foldmethod=syntax
+" set foldlevelstart=99           " start out with everything unfolded
 
 " NERDTree settings {{{
 nnoremap <leader>n :NERDTreeFocus<CR>
