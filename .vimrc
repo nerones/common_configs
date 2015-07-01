@@ -121,3 +121,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " Permite correr mas de un checker a la ves
 " let g:syntastic_aggregate_errors = 1
+
+" Agrega el comando :Todo para ver los todo|fixme
+command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
