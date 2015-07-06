@@ -1,0 +1,12 @@
+[user]
+	name = Nelson Efrain A. Cruz
+	email = neac03@gmail.com
+[github]
+	user = nerones
+[core]
+	editor = vim
+[diff]
+	guitool = meld
+	tool = meld
+[alias]
+	l = log --oneline --decorate --graph --all
