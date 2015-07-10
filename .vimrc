@@ -122,5 +122,13 @@ let g:syntastic_check_on_wq = 0
 " Permite correr mas de un checker a la ves
 " let g:syntastic_aggregate_errors = 1
 
+" Keep undo history across sessions by storing it in a file
+if !isdirectory($HOME."/.vim/undo-dir")
+  call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir/
+set undofile
+
+
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
