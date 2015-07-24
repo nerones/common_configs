@@ -3,7 +3,7 @@ set nocompatible | filetype indent plugin on | syn on
 
 if has("syntax")
   syntax on
-  set synmaxcol=1000
+  set synmaxcol=100
 endif
 
 fun! SetupVAM()
@@ -39,6 +39,10 @@ set t_Co=256
 set bg=dark
 colorscheme gruvbox
 set spelllang=es
+set nocursorline
+set nocursorcolumn
+set ttyfast
+set lazyredraw
 " set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
