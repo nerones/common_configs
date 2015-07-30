@@ -3,7 +3,7 @@ set nocompatible | filetype indent plugin on | syn on
 
 if has("syntax")
   syntax on
-  set synmaxcol=100
+  set synmaxcol=120
 endif
 
 fun! SetupVAM()
@@ -41,6 +41,7 @@ colorscheme gruvbox
 set spelllang=es
 set nocursorline
 set nocursorcolumn
+set ttimeoutlen=50
 set ttyfast
 set lazyredraw
 " set tabstop=4       " The width of a TAB is set to 4.

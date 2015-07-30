@@ -1,4 +1,8 @@
 # method
+snippet lform
+	{!! Form::open(['route' => '${1:mi_ruta}']) !!}
+	  ${0}
+	{!! Form::close() !!}
 snippet textfield
 	<div class="form-group">
 	  {!! Form::label('${1:name}', '${2}:') !!}
@@ -13,6 +17,11 @@ snippet submit
 	<div class="form-group">
 	  {!! Form::submit('${1:Guardar}', ['class' => 'btn btn-default']) !!}
 	</div>
+snippet retv
+	return view(
+		'${1:view}',
+		[${2}]
+	);
 snippet citextarea
 	<div class="fila">
 		<label for="${1:name}">${2}</label>
