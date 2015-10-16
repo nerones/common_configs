@@ -3,7 +3,7 @@ set nocompatible | filetype indent plugin on | syn on
 
 if has("syntax")
   syntax on
-  set synmaxcol=120
+  set synmaxcol=170
 endif
 
 fun! SetupVAM()
@@ -22,7 +22,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails
+VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
 
 
 " use <c-x><c-p> to complete plugin names
@@ -37,7 +37,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set t_Co=256
 set bg=dark
-colorscheme gruvbox
+colorscheme apprentice
 set spelllang=es
 set nocursorline
 set nocursorcolumn

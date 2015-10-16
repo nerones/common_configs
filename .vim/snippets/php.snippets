@@ -3,10 +3,17 @@ snippet lform
 	{!! Form::open(['route' => '${1:mi_ruta}']) !!}
 	  ${0}
 	{!! Form::close() !!}
+snippet stextfield
+	<div class="form-group">
+	  <label class="control-label">${1}</label>
+	  <div class="">
+	    <p class="form-control-static">{{${2}}}</p>
+	  </div>
+	</div>
 snippet textfield
 	<div class="form-group">
 	  {!! Form::label('${1:name}', '${2}:') !!}
-	  {!! Form::text('$1', null, ['class' => 'form-control']) !!}
+	  {!! Form::text('$1', null, ['class' => 'form-control', 'placeholder' => '${3}']) !!}
 	</div>
 snippet selectfield
 	<div class="form-group">
@@ -32,6 +39,13 @@ snippet citextarea
 		  rows="5"
 		  placeholder="${3}"
 		  <?=classRegValidation('$1')?>><?= $reg['$1']?></textarea>
+	</div>
+snippet cireadtextfield
+	<div class="fila">
+		<label>${1}</label>
+		<input
+		  type="text"
+		  value="<?= $${2:reg}['${3}']?>"
 	</div>
 snippet citextfield
 	<div class="fila">
@@ -61,3 +75,8 @@ snippet cill
 	$this->load->library('${1:mi_libreria}');
 snippet cilm
 	$this->load->model('${1:mi_modelo}');
+snippet __c
+	public function __construct(${1})
+	{
+	  ${2://}
+	}
