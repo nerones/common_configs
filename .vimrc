@@ -22,8 +22,8 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute FuzzyFinder Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
-
+VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
+VAMActivate github:nerones/vim-fuzzyfinder
 
 " use <c-x><c-p> to complete plugin names
 
@@ -70,7 +70,7 @@ nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
 let g:fuf_file_exclude         = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
-
+let g:fuf_coveragefile_ignore_regex = '\.\(exe\|dll\|bak\|orig\|sw[po]\)$\|\(^\|[/\\]\)\(\.hg\|\.git\|\.bzr\|\.bundle\|vendor\|node_modules\|bower_components\)\($\|[/\\]\)'
 set omnifunc=syntaxcomplete#Complete
 set nowrap
 set hlsearch
