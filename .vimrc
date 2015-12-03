@@ -24,7 +24,7 @@ endfun
 call SetupVAM()
 VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
 VAMActivate github:nerones/vim-fuzzyfinder
-
+VAMActivate github:jwalton512/vim-blade
 " use <c-x><c-p> to complete plugin names
 
 " Change the mapleader from \ to ,

@@ -1,0 +1,48 @@
+# method
+snippet bladepanelform
+	@extends('layout.panel')
+	@section('panelTitle', '${1:Titulo_panel}')
+	@section('panelBody')
+	<div class="row">
+	  <div class="col-xs-12">
+	  </div>
+	</div>
+	@stop
+snippet bladepaneltable
+	@extends('layout.panel')
+	@section('panelTitle', '${1:Titulo_panel}')
+	@section('panelBody')
+	<div class="row">
+	  <div class="col-xs-12">
+	    <a class="btn btn-default btn-sm pull-right" href="{{route('${2:mi_ruta}')}}">
+	      <i class="fa fa-plus"> Nuevo</i>
+	    </a>
+	  </div>
+	</div>
+	<br />
+	<div class="row">
+	  <div class="col-xs-12">
+	    <table class="table-base">
+	      <thead>
+		<tr>
+		  <td>$0</td>
+		</tr>
+	      </thead>
+	      <tbody>
+	        @forelse(\$${3:obe} as $item)
+	          <tr>
+	            <td></td>
+	          </tr>
+	        @empty
+	          <div class="alert alert-info" role="alert">No se encontraron periodos cargados</div>
+	        @endforelse
+	      </tbody>
+	    </table>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 text-center">
+	    {!!\$$3->render()!!}
+	  </div>
+	</div>
+	@stop
