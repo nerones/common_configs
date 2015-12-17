@@ -10,7 +10,9 @@ snippet bladepanelform
 	@stop
 snippet bladepaneltable
 	@extends('layout.panel')
-	@section('panelTitle', '${1:Titulo_panel}')
+	@section('panelTitle' )
+	  '${1:Titulo_panel}'
+	@stop
 	@section('panelBody')
 	<div class="row">
 	  <div class="col-xs-12">
@@ -24,9 +26,9 @@ snippet bladepaneltable
 	  <div class="col-xs-12">
 	    <table class="table-base">
 	      <thead>
-		<tr>
-		  <td>$0</td>
-		</tr>
+	        <tr>
+	          <td>$0</td>
+	        </tr>
 	      </thead>
 	      <tbody>
 	        @forelse(\$${3:obe} as $item)
