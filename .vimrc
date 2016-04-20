@@ -23,7 +23,7 @@ endfun
 
 call SetupVAM()
 VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
-VAMActivate ctrlp
+VAMActivate ctrlp gruvbox
 VAMActivate github:jwalton512/vim-blade
 " use <c-x><c-p> to complete plugin names
 
@@ -37,7 +37,9 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set t_Co=256
 set bg=dark
-colorscheme apprentice
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'soft'
+colorscheme gruvbox
 set spelllang=es
 set nocursorline
 set nocursorcolumn
@@ -88,7 +90,6 @@ let g:github='https://github.com/nerones'
 set wildmode=longest:full
 set wildmenu
 set incsearch
-let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 
