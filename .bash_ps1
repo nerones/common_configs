@@ -18,7 +18,7 @@ trap 'echo -ne "\e[0m"' DEBUG
 function prompt_command {
   MYDIR=${PWD#$HOME}
 # create a $fill of all screen width minus the time string and a space:
-  let fillsize=${COLUMNS}-${#MYDIR}-15
+  let fillsize=${COLUMNS}-${#MYDIR}-14
     fill="~"$MYDIR" "
     while [ "$fillsize" -gt "0" ]
       do
