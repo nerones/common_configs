@@ -9,7 +9,7 @@ command_style=$reset_style'\[\033[1;29m\]' # bold black
 git_style=$reset_style'\[\033[0;32m\]'
 # Prompt variable:
 
-PS1="\n$status_style ┌─[ "'$fill \t ]\n'" $status_style└─[ $prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h'"$git_style"'$(__git_ps1)'"$reset_style:$""$command_style "
+PS1="\n$status_style┌ "'$fill \t \n'"$status_style└ $prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h'"$git_style"'$(__git_ps1)'"$reset_style:$""$command_style "
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
@@ -18,7 +18,7 @@ trap 'echo -ne "\e[0m"' DEBUG
 function prompt_command {
   MYDIR=${PWD#$HOME}
 # create a $fill of all screen width minus the time string and a space:
-  let fillsize=${COLUMNS}-${#MYDIR}-19
+  let fillsize=${COLUMNS}-${#MYDIR}-15
     fill="~"$MYDIR" "
     while [ "$fillsize" -gt "0" ]
       do
