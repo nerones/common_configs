@@ -1,7 +1,23 @@
 # method
+snippet lform
+	{!! Form::open(['route' => '${1:mi_ruta}']) !!}
+	  ${0}
+	  <div class="form-group">
+	    {!! Form::submit('${2:Guardar}', ['class' => 'btn btn-primary']) !!}
+	    <a class="btn btn-default" href="{{route('${3:mi.ruta}',${4:id})}}">${5:Cancelar}</a>
+	  </div>
+	{!! Form::close() !!}
+snippet lstextfield
+	{!! Field::text('${1:nombre}', ['label' => '$1', 'placeholder' => '${2:Ingrese el campo}', 'required']) !!}
+snippet lsselect
+	{!! Field::select('${1:nombre_id}', ${2:\$options}, ${3:null}, ['label'=>'$1', 'required', 'empty' => '${4:Elija una opción}']) !!}
+snippet bladecancel
+	<a class="btn btn-default" href="{{route('${1:mi.ruta}',${2:id})}}">${3:Cancelar}</a>$0
 snippet bladepanelform
 	@extends('layout.panel')
-	@section('panelTitle', '${1:Titulo_panel}')
+	@section('panelTitle')
+	  ${1:Titulo_panel}
+	@stop
 	@section('panelBody')
 	<div class="row">
 	  <div class="col-xs-12">
@@ -10,14 +26,14 @@ snippet bladepanelform
 	@stop
 snippet bladepaneltable
 	@extends('layout.panel')
-	@section('panelTitle' )
-	  '${1:Titulo_panel}'
+	@section('panelTitle')
+	  ${1:Titulo_panel}
 	@stop
 	@section('panelBody')
 	<div class="row">
 	  <div class="col-xs-12">
 	    <a class="btn btn-default btn-sm pull-right" href="{{route('${2:mi_ruta}')}}">
-	      <i class="fa fa-plus"> Nuevo</i>
+	      <i class="fa fa-plus"></i> Nuevo
 	    </a>
 	  </div>
 	</div>
@@ -33,7 +49,7 @@ snippet bladepaneltable
 	      <tbody>
 	        @forelse(\$${3:obe} as $item)
 	          <tr>
-	            <td></td>
+	            <td>{{$item->}}</td>
 	          </tr>
 	        @empty
 	          <div class="alert alert-info" role="alert">No se encontraron periodos cargados</div>

@@ -1,8 +1,4 @@
 # method
-snippet lform
-	{!! Form::open(['route' => '${1:mi_ruta}']) !!}
-	  ${0}
-	{!! Form::close() !!}
 snippet stextfield
 	<div class="form-group">
 	  <label class="control-label">${1}</label>
@@ -29,6 +25,9 @@ snippet retv
 		'${1:view}',
 		[${2}]
 	);
+snippet retred
+	return redirect()->route('${1:ruta}')
+	  ->withSuccess('${2:El recurso fue correctamente registrado}');$0
 snippet citextarea
 	<div class="fila">
 		<label for="${1:name}">${2}</label>
