@@ -24,7 +24,8 @@ endfun
 call SetupVAM()
 VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
 VAMActivate ctrlp gruvbox unimpaired vividchalk
-VAMActivate github:jwalton512/vim-blade github:junegunn/gv.vim
+VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
+
 " use <c-x><c-p> to complete plugin names
 
 " Change the mapleader from \ to ,
@@ -135,6 +136,7 @@ endif
 set undodir=~/.vim/undo-dir/
 set undofile
 
+let g:ctrlp_clear_cache_on_exit = 0
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
