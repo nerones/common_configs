@@ -25,6 +25,7 @@ call SetupVAM()
 VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
 VAMActivate ctrlp gruvbox unimpaired vividchalk
 VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
+VAMActivate github:vim-airline/vim-airline-themes
 
 " use <c-x><c-p> to complete plugin names
 
@@ -40,8 +41,8 @@ set t_Co=256
 set termguicolors
 set bg=dark
 let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark = 'soft'
-colorscheme darktooth
+let g:gruvbox_contrast_dark = 'medium'
+colorscheme gruvbox
 set spelllang=es
 set nocursorline
 set nocursorcolumn
@@ -66,16 +67,10 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    that won't be autoindented
 
 set relativenumber
+set nu
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" nmap ,f :FufFileWithCurrentBufferDir<CR>
-nmap ,f :FufCoverageFile<CR>
-nmap ,b :FufBuffer<CR>
-nmap ,t :FufTaggedFile<CR>
-let g:fuf_file_exclude         = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])(\.hg|\.git|\.bzr|\.bundle|public/system|public/images|vendor|public/javascripts/ckeditor|vendor|node_modules|bower_components)($|[/\\])'
-let g:fuf_coveragefile_ignore_regex = '\.\(exe\|dll\|bak\|orig\|sw[po]\)$\|\(^\|[/\\]\)\(\.hg\|\.git\|\.bzr\|\.bundle\|vendor\|node_modules\|bower_components\)\($\|[/\\]\)'
 set omnifunc=syntaxcomplete#Complete
 set nowrap
 set hlsearch
@@ -95,6 +90,8 @@ set wildmenu
 set incsearch
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " set foldmethod=syntax
 " set foldlevelstart=99           " start out with everything unfolded
