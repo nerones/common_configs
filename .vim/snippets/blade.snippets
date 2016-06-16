@@ -11,6 +11,8 @@ snippet lstextfield
 	{!! Field::text('${1:nombre}', ['label' => '$1', 'placeholder' => '${2:Ingrese el campo}', 'required']) !!}
 snippet lsselect
 	{!! Field::select('${1:nombre_id}', ${2:\$options}, ${3:null}, ['label'=>'$1', 'required', 'empty' => '${4:Elija una opción}']) !!}
+snippet	bladea
+	<a class="btn btn-sm btn-default" title="${1:Accion}" href="{{route('${2:ruta}'${3:, $solicitud->id})}}"><i class="fa fa-${4:edit}"></i></a>
 snippet bladecancel
 	<a class="btn btn-default" href="{{route('${1:mi.ruta}',${2:id})}}">${3:Cancelar}</a>$0
 snippet bladepanelform

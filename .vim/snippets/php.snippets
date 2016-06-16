@@ -28,6 +28,8 @@ snippet retv
 snippet retred
 	return redirect()->route('${1:ruta}')
 	  ->withSuccess('${2:El recurso fue correctamente registrado}');$0
+snippet retj
+	return response()->json(${1:['' => $]});$0
 snippet citextarea
 	<div class="fila">
 		<label for="${1:name}">${2}</label>

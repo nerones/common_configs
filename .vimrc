@@ -37,10 +37,11 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 set t_Co=256
+set termguicolors
 set bg=dark
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark = 'soft'
-colorscheme gruvbox
+colorscheme darktooth
 set spelllang=es
 set nocursorline
 set nocursorcolumn
@@ -138,6 +139,7 @@ set undodir=~/.vim/undo-dir/
 set undofile
 
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
