@@ -37,7 +37,6 @@ let maplocalleader="\\"
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-set t_Co=256
 set termguicolors
 set bg=dark
 let g:gruvbox_italic=1

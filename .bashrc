@@ -122,8 +122,6 @@ fi
 # Set Git language to English
 alias git='LANG=en_US git'
 
-TERM=gnome-256color
-
 PATH=$PATH:$HOME/.composer/vendor/bin
 echo "Welcome to"
 echo "---------------------------------"
