@@ -22,8 +22,9 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete Syntastic The_NERD_Commenter rails apprentice
-VAMActivate ctrlp gruvbox unimpaired vividchalk
+VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete The_NERD_Commenter rails apprentice
+VAMActivate ctrlp gruvbox unimpaired vividchalk seoul256
+VAMActivate github:neomake/neomake github:majutsushi/tagbar
 VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
 VAMActivate github:vim-airline/vim-airline-themes
 
@@ -115,18 +116,6 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
-" Syntastic configs
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-" Permite correr mas de un checker a la ves
-" let g:syntastic_aggregate_errors = 1
-
 " Keep undo history across sessions by storing it in a file
 if !isdirectory($HOME."/.vim/undo-dir")
   call mkdir($HOME."/.vim/undo-dir", "", 0700)
@@ -139,3 +128,12 @@ let g:ctrlp_show_hidden = 1
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
+
+" neomake settings {{{
+autocmd! BufWritePost * Neomake
+
+" }}}
+
+"for tagbar
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
+
