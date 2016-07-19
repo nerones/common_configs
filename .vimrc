@@ -131,7 +131,7 @@ command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
 " neomake settings {{{
 autocmd! BufWritePost * Neomake
-
+let g:neomake_php_phpcs_args_standard = 'PSR2'
 " }}}
 
 "for tagbar
