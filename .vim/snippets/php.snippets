@@ -103,3 +103,6 @@ snippet lmt
 	$table->time('${1:nombre}')$0
 snippet lmbool
 	$table->boolean('${1:nombre}')$0
+snippet lmfk
+	$table->integer('${1:nombre}')->unsigned();
+	$table->foreign('$1')->references('id')->on('${2:tabla}')$0
