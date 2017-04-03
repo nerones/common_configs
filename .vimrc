@@ -23,10 +23,10 @@ endfun
 
 call SetupVAM()
 VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete The_NERD_Commenter rails apprentice
-VAMActivate ctrlp gruvbox unimpaired vividchalk seoul256
+VAMActivate ctrlp gruvbox unimpaired vividchalk seoul256 local_vimrc
 VAMActivate github:neomake/neomake github:majutsushi/tagbar
 VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
-VAMActivate github:vim-airline/vim-airline-themes
+VAMActivate github:vim-airline/vim-airline-themes github:mxw/vim-jsx github:posva/vim-vue
 
 " use <c-x><c-p> to complete plugin names
 
@@ -92,6 +92,8 @@ set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" let g:airline_powerline_fonts = 0
+let g:airline_symbols_ascii = 1
 
 " set foldmethod=syntax
 " set foldlevelstart=99           " start out with everything unfolded
@@ -132,8 +134,12 @@ command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 " neomake settings {{{
 autocmd! BufWritePost * Neomake
 let g:neomake_php_phpcs_args_standard = 'PSR2'
+"let g:neomake_php_phpcs_args_standard = 'vendor/nerones/codeigniter-phpcs/CodeIgniter/'
 " }}}
 
 "for tagbar
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
+let g:mustache_abbreviations = 1
 
+let g:local_vimrc_options = {}
+let g:local_vimrc_options.whitelist = ['/home/nelson/workspace/']

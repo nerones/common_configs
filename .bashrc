@@ -138,4 +138,7 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
+export PATH="/home/nelson/Android/Sdk/platform:/home/nelson/Android/Sdk/platform-tools/:/home/nelson/.android-studio/bin/:$HOME/.bin:$PATH"
+export ANDROID_HOME="/home/nelson/Android/Sdk"
+export GOPATH=/home/nelson/workspace/gocode
+export GOBIN=$GOPATH/bin
