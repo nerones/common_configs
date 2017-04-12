@@ -6,6 +6,7 @@ alias pugdebug='nohup ~/.pugdebug/pugdebug &> /dev/null &'
 alias dklatest='docker run -p 80:80 -v /home/nelson/workspace/:/var/www/html/ nerones/simple-php-apache-dev:5.5.23'
 
 alias tdev='tmux -f ~/.dev.tmux.conf attach -t dev'
+alias tdev54='tmux -f ~/.dev54.tmux.conf attach -t dev'
 
 #Laravel aliases
 
