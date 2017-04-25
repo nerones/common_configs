@@ -22,7 +22,7 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate matchit.zip vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete The_NERD_Commenter rails apprentice
+VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete The_NERD_Commenter rails apprentice
 VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256 local_vimrc
 VAMActivate github:neomake/neomake github:majutsushi/tagbar
 VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
