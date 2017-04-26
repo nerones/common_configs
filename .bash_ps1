@@ -8,8 +8,12 @@ prompt_style=$reset_style
 command_style=$reset_style'\[\033[1;29m\]' # bold black
 git_style=$reset_style'\[\033[0;32m\]'
 # Prompt variable:
+function make_my_git_ps1 {
+  local ps1=$(__git_ps1 | awk -v len=25 '{ if (length($0) > len) print substr($0, 1, len-3) "...)"; else print; }')
+  echo $ps1
+}
 
-PS1="\n$status_style┌ "'$fill \t \n'"$status_style└ $prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h'"$git_style"'$(__git_ps1)'"$reset_style:$""$command_style "
+PS1="\n$status_style┌ "'$fill \t \n'"$status_style└ $prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h'"$git_style"'$(make_my_git_ps1)'"$reset_style:$""$command_style "
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
