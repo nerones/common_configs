@@ -22,11 +22,13 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-less%4892 vim-php-namespace phpcomplete The_NERD_Commenter rails apprentice
-VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256 local_vimrc
+VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-php-namespace phpcomplete The_NERD_Commenter apprentice
+VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256
 VAMActivate github:neomake/neomake github:majutsushi/tagbar
 VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
 VAMActivate github:vim-airline/vim-airline-themes github:mxw/vim-jsx github:posva/vim-vue
+VAMActivate github:chriskempson/base16-vim
+VAMActivate github:pangloss/vim-javascript github:mxw/vim-jsx
 
 " use <c-x><c-p> to complete plugin names
 
@@ -42,7 +44,7 @@ set termguicolors
 set bg=dark
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark = 'medium'
-colorscheme gruvbox
+colorscheme base16-darktooth
 set spelllang=es
 set nocursorline
 set nocursorcolumn
@@ -133,7 +135,8 @@ let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|git)$'}
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
 " neomake settings {{{
-autocmd! BufWritePost * Neomake
+"autocmd! BufWritePost * Neomake
+call neomake#configure#automake('rw', 1000)
 let g:neomake_php_phpcs_args_standard = 'PSR2'
 "let g:neomake_php_phpcs_args_standard = 'vendor/nerones/codeigniter-phpcs/CodeIgniter/'
 " }}}
@@ -144,3 +147,5 @@ let g:mustache_abbreviations = 1
 
 let g:local_vimrc_options = {}
 let g:local_vimrc_options.whitelist = ['/home/nelson/workspace/']
+
+tnoremap <leader>n <C-\><C-n>

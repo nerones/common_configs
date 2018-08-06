@@ -136,13 +136,17 @@ if [ -f "$HOME/.bash_ps1" ]; then
   . "$HOME/.bash_ps1"
 fi
 
+export PATH="$HOME/.neovim/bin:$PATH"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export GOPATH=/home/nelson/workspace/gocode
-export GOBIN=$GOPATH/bin
-export PATH="$HOME/.bin:$PATH"
+#export GOBIN=$GOPATH/bin
+export PATH="/usr/local/go/bin:$HOME/.bin:$PATH"
 
 ### Paths for react-native
 export ANDROID_HOME=${HOME}/workspace/Android/android-sdk-linux_x86
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+eval $(thefuck --alias)
