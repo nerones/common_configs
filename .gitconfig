@@ -1,6 +1,7 @@
 [user]
 	name = Nelson Efrain A. Cruz
 	email = neac03@gmail.com
+	signingkey = ACCCCA18
 [github]
 	user = nerones
 [core]
@@ -19,3 +20,7 @@
         hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
         type = cat-file -t
         dump = cat-file -p
+[push]
+	default = simple
+[commit]
+	gpgsign = true

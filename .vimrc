@@ -22,12 +22,12 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag vim-airline fugitive vim-php-namespace phpcomplete The_NERD_Commenter apprentice
+VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag fugitive vim-php-namespace phpcomplete The_NERD_Commenter apprentice
 VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256
 VAMActivate github:neomake/neomake github:majutsushi/tagbar
-VAMActivate github:jwalton512/vim-blade Gundo github:junegunn/gv.vim
-VAMActivate github:vim-airline/vim-airline-themes github:mxw/vim-jsx github:posva/vim-vue
-VAMActivate github:chriskempson/base16-vim
+VAMActivate github:jwalton512/vim-blade github:junegunn/gv.vim
+VAMActivate github:mxw/vim-jsx github:posva/vim-vue
+VAMActivate github:chriskempson/base16-vim github:phpactor/phpactor
 VAMActivate github:pangloss/vim-javascript github:mxw/vim-jsx
 
 " use <c-x><c-p> to complete plugin names
@@ -52,9 +52,9 @@ set ttimeoutlen=50
 set ttyfast
 set lazyredraw
 " set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+" Still it is a \t. It is just that
+" Vim will interpret it to be having
+" a width of 4.
 
 set shiftwidth=2    " Indents will have a width of 4
 set softtabstop=2   " Sets the number of columns for a TAB
@@ -65,8 +65,8 @@ set smarttab
 set autoindent
 set smartindent
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
+"    paste mode, where you can paste mass data
+"    that won't be autoindented
 
 set relativenumber
 set nu
@@ -91,11 +91,11 @@ set wildmode=longest:full
 set wildmenu
 set incsearch
 set laststatus=2
-let g:airline#extensions#branch#enabled = 1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-" let g:airline_powerline_fonts = 0
-let g:airline_symbols_ascii = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+"" let g:airline_powerline_fonts = 0
+"let g:airline_symbols_ascii = 1
 
 " set foldmethod=syntax
 " set foldlevelstart=99           " start out with everything unfolded
@@ -116,7 +116,7 @@ let NERDTreeHighlightCursorline=1
 
 " Don't display these kinds of files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-            \ '\.o$', '\.so$', '\.egg$', '^\.git$', '__pycache__', '\.DS_Store' ]
+      \ '\.o$', '\.so$', '\.egg$', '^\.git$', '__pycache__', '\.DS_Store' ]
 
 " }}}
 

@@ -16,8 +16,10 @@ alias pads='php artisan db:seed'
 alias padv='php artisan db:seed --class DevSeeder'
 
 alias pam="php artisan migrate"
-alias pam:r="php artisan migrate:refresh"
-alias pam:roll="php artisan migrate:rollback"
+alias pamf="php artisan migrate:fresh"
+alias pamfs="php artisan migrate:fresh --seed"
+alias pamr="php artisan migrate:refresh"
+alias pamroll="php artisan migrate:rollback"
 
 alias pamc='php artisan make:controller'
 alias pame='php artisan make:event'
