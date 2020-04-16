@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=3000
-HISTFILESIZE=3000
+HISTSIZE=6000
+HISTFILESIZE=6000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -122,7 +122,7 @@ fi
 # Set Git language to English
 alias git='LANG=en_US git'
 
-PATH=$PATH:$HOME/.composer/vendor/bin
+PATH=$PATH:$HOME/.config/composer/vendor/bin
 echo "Welcome to"
 echo "---------------------------------"
 echo "  ___ __  _ __  __ ___ ___  __   "
@@ -136,7 +136,7 @@ if [ -f "$HOME/.bash_ps1" ]; then
   . "$HOME/.bash_ps1"
 fi
 
-export PATH="$HOME/.neovim/bin:$PATH"
+export PATH="/home/nelson/.local/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

@@ -24,11 +24,15 @@ endfun
 call SetupVAM()
 VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag fugitive vim-php-namespace phpcomplete The_NERD_Commenter apprentice
 VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256
-VAMActivate github:neomake/neomake github:majutsushi/tagbar
+"VAMActivate github:neomake/neomake github:majutsushi/tagbar
+VAMActivate github:majutsushi/tagbar
 VAMActivate github:jwalton512/vim-blade github:junegunn/gv.vim
 VAMActivate github:mxw/vim-jsx github:posva/vim-vue
 VAMActivate github:chriskempson/base16-vim github:phpactor/phpactor
 VAMActivate github:pangloss/vim-javascript github:mxw/vim-jsx
+VAMActivate github:dense-analysis/ale
+VAMActivate github:neoclide/coc.nvim
+
 
 " use <c-x><c-p> to complete plugin names
 
@@ -136,10 +140,13 @@ command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
 " neomake settings {{{
 "autocmd! BufWritePost * Neomake
-call neomake#configure#automake('rw', 1000)
-let g:neomake_php_phpcs_args_standard = 'PSR2'
+" call neomake#configure#automake('rw', 1000)
+" let g:neomake_php_phpcs_args_standard = 'PSR2'
+" let g:neomake_verbose = 3
 "let g:neomake_php_phpcs_args_standard = 'vendor/nerones/codeigniter-phpcs/CodeIgniter/'
 " }}}
+
+let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
 
 "for tagbar
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
