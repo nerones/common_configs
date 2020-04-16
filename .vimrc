@@ -22,17 +22,32 @@ fun! SetupVAM()
 endfun
 
 call SetupVAM()
-VAMActivate vim-snippets snipmate nerdtree-execute Emmet surround MatchTag fugitive vim-php-namespace phpcomplete The_NERD_Commenter apprentice
-VAMActivate github:ctrlpvim/ctrlp.vim gruvbox unimpaired vividchalk seoul256
-"VAMActivate github:neomake/neomake github:majutsushi/tagbar
+VAMActivate vim-snippets
+VAMActivate snipmate
+VAMActivate nerdtree-execute
+VAMActivate Emmet
+VAMActivate surround
+VAMActivate MatchTag
+VAMActivate fugitive
+VAMActivate vim-php-namespace
+VAMActivate phpcomplete
+VAMActivate The_NERD_Commenter
+VAMActivate apprentice
+VAMActivate github:ctrlpvim/ctrlp.vim
+VAMActivate gruvbox
+VAMActivate unimpaired
+VAMActivate vividchalk
+VAMActivate seoul256
 VAMActivate github:majutsushi/tagbar
-VAMActivate github:jwalton512/vim-blade github:junegunn/gv.vim
-VAMActivate github:mxw/vim-jsx github:posva/vim-vue
-VAMActivate github:chriskempson/base16-vim github:phpactor/phpactor
-VAMActivate github:pangloss/vim-javascript github:mxw/vim-jsx
+VAMActivate github:jwalton512/vim-blade
+VAMActivate github:junegunn/gv.vim
+VAMActivate github:mxw/vim-jsx
+VAMActivate github:posva/vim-vue
+VAMActivate github:chriskempson/base16-vim
+VAMActivate github:phpactor/phpactor
+VAMActivate github:pangloss/vim-javascript
 VAMActivate github:dense-analysis/ale
 VAMActivate github:neoclide/coc.nvim
-
 
 " use <c-x><c-p> to complete plugin names
 
@@ -133,7 +148,7 @@ set undofile
 
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|git)$'}
+let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|git|android\/.gradle|android\/app\/build)$'}
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw

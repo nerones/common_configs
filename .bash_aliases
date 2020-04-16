@@ -7,6 +7,7 @@ alias dklatest='docker run -p 80:80 -v /home/nelson/workspace/:/var/www/html/ ne
 
 alias tdev='tmux -f ~/.dev.tmux.conf attach -t dev'
 alias tdev54='tmux -f ~/.dev54.tmux.conf attach -t dev'
+alias tnative='tmux -f ~/.dev.native.tmux.conf attach -t dev'
 
 #Laravel aliases
 
