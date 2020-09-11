@@ -29,8 +29,6 @@ VAMActivate Emmet
 VAMActivate surround
 VAMActivate MatchTag
 VAMActivate fugitive
-VAMActivate vim-php-namespace
-VAMActivate phpcomplete
 VAMActivate The_NERD_Commenter
 VAMActivate apprentice
 VAMActivate github:ctrlpvim/ctrlp.vim

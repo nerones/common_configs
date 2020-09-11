@@ -11,24 +11,28 @@ setlocal omnifunc=phpactor#Complete
 
 let g:syntastic_php_phpcs_args='--standard=PSR2'
 let g:syntastic_php_checkers = ['php', 'phpmd', 'phpcs']
-"php namespaces config
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-"noremap <Leader>u :call PhpInsertUse()<CR>
 
-" Include use statement
-nmap <Leader>u :call phpactor#UseAdd()<CR>
+noremap <leader>t :!vendor/bin/phpunit %<cr>
 
-" Invoke the context menu
-nmap <Leader>mm :call phpactor#ContextMenu()<CR>
-
-" Goto definition of class or class member under the cursor
-nmap <Leader>o :call phpactor#GotoDefinition()<CR>
-
-" Transform the classes in the current file
-nmap <Leader>tt :call phpactor#Transform()<CR>
-
-" Generate a new class (replacing the current file)
-nmap <Leader>nc :call phpactor#ClassNew()<CR>
-
-" Extract method from selection
-vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+"augroup PhpactorMappings
+  "au!
+  nmap <buffer> <Leader>u :PhpactorImportClass<CR>
+  nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
+  nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+  nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+  nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
+  nmap <buffer> <Leader>o :PhpactorGotoDefinition<CR>
+  nmap <buffer> <Leader>Oh :PhpactorGotoDefinitionHsplit<CR>
+  nmap <buffer> <Leader>Ov :PhpactorGotoDefinitionVsplit<CR>
+  nmap <buffer> <Leader>Ot :PhpactorGotoDefinitionTab<CR>
+  nmap <buffer> <Leader>K :PhpactorHover<CR>
+  nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+  nmap <buffer> <Leader>nc :PhpactorClassNew<CR>
+  nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
+  nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
+  nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
+  nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
+  nmap <buffer> <silent> <Leader>ee :PhpactorExtractExpression<CR>
+  vmap <buffer> <silent> <Leader>ee :<C-u>PhpactorExtractExpression<CR>
+  vmap <buffer> <silent> <Leader>em :<C-u>PhpactorExtractMethod<CR>
+"augroup END

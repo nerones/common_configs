@@ -13,6 +13,7 @@
 	l = log --oneline --decorate --graph --all
         d = diff --word-diff -w
         fo = fetch origin
+        foprune = fetch origin --prune
         co = checkout
         ci = commit
         st = status
@@ -24,3 +25,8 @@
 	default = simple
 [commit]
 	gpgsign = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
