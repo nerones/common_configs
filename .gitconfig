@@ -1,7 +1,7 @@
 [user]
 	name = Nelson Efrain A. Cruz
 	email = neac03@gmail.com
-	signingkey = ACCCCA18
+	signingkey = 9B01FC256B10F83B
 [github]
 	user = nerones
 [core]
@@ -30,3 +30,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[pull]
+	ff = only

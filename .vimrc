@@ -104,6 +104,8 @@ let g:email='neac03@gmail.com'
 let g:snips_github='https://github.com/nerones'
 let g:github='https://github.com/nerones'
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 set wildmode=longest:full
 set wildmenu
 set incsearch
@@ -146,7 +148,7 @@ set undofile
 
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|git|android\/.gradle|android\/app\/build)$'}
+let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|.cache|git|android\/.gradle|android\/app\/build)$'}
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
@@ -158,7 +160,7 @@ command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 " let g:neomake_verbose = 3
 "let g:neomake_php_phpcs_args_standard = 'vendor/nerones/codeigniter-phpcs/CodeIgniter/'
 " }}}
-
+let g:ale_completion_enabled = 0
 let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
 
 "for tagbar
@@ -167,5 +169,6 @@ let g:mustache_abbreviations = 1
 
 let g:local_vimrc_options = {}
 let g:local_vimrc_options.whitelist = ['/home/nelson/workspace/']
+
 
 tnoremap <leader>n <C-\><C-n>
