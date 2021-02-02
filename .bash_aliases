@@ -27,3 +27,5 @@ alias pame='php artisan make:event'
 alias pammo='php artisan make:model'
 alias pamm='php artisan make:migration'
 alias pams='php artisan make:seed'
+
+alias ssh="kitty +kitten ssh"
