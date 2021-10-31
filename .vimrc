@@ -1,73 +1,17 @@
 " put this line first in ~/.vimrc
-set nocompatible | filetype indent plugin on | syn on
-
-if has("syntax")
-  syntax on
-  set synmaxcol=170
-endif
-
-fun! SetupVAM()
-  let c = get(g:, 'vim_addon_manager', {})
-  let g:vim_addon_manager = c
-  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-  " most used options you may want to use:
-  " let c.log_to_buf = 1
-  " let c.auto_install = 0
-  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-  endif
-  call vam#ActivateAddons([], {'auto_install' : 0})
-endfun
-
-call SetupVAM()
-VAMActivate vim-snippets
-VAMActivate snipmate
-VAMActivate nerdtree-execute
-VAMActivate Emmet
-VAMActivate surround
-VAMActivate MatchTag
-VAMActivate fugitive
-VAMActivate The_NERD_Commenter
-VAMActivate apprentice
-VAMActivate github:ctrlpvim/ctrlp.vim
-VAMActivate gruvbox
-VAMActivate unimpaired
-VAMActivate vividchalk
-VAMActivate seoul256
-VAMActivate github:majutsushi/tagbar
-VAMActivate github:jwalton512/vim-blade
-VAMActivate github:junegunn/gv.vim
-VAMActivate github:mxw/vim-jsx
-VAMActivate github:posva/vim-vue
-VAMActivate github:chriskempson/base16-vim
-VAMActivate github:phpactor/phpactor
-VAMActivate github:pangloss/vim-javascript
-VAMActivate github:dense-analysis/ale
-VAMActivate github:neoclide/coc.nvim
-
-" use <c-x><c-p> to complete plugin names
-
-" Change the mapleader from \ to ,
-let mapleader=","
-let maplocalleader="\\"
-
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" set nocompatible | filetype indent plugin on | syn on
 
 set termguicolors
 set bg=dark
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark = 'medium'
-colorscheme base16-darktooth
-set spelllang=es
+set spelllang=en
 set nocursorline
 set nocursorcolumn
 set ttimeoutlen=50
 set ttyfast
 set lazyredraw
+set wildmode=longest:full
+set wildmenu
+set laststatus=2
 " set tabstop=4       " The width of a TAB is set to 4.
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
@@ -76,7 +20,6 @@ set lazyredraw
 set shiftwidth=2    " Indents will have a width of 4
 set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
-
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
 set autoindent
@@ -87,14 +30,74 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
 
 set relativenumber
 set nu
+set nowrap
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set diffopt +=iwhite
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin(stdpath('data') . '/plugged')
+
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+"Plug 'preservim/nerdtree'
+Plug 'mattn/emmet-vim'
+" Plug 'tpope/vim-surround'
+Plug 'gregsexton/MatchTag'
+Plug 'tpope/vim-fugitive'
+" Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jwalton512/vim-blade'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'posva/vim-vue'
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'pangloss/vim-javascript'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+
+" Plug 'chriskempson/base16-vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'romainl/Apprentice'
+Plug 'folke/tokyonight.nvim'
+"Plug 'tpope/vim-vividchalk'
+"Plug 'junegunn/seoul256.vim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
+call plug#end()
+
+" Change the mapleader from \ to ,
+let mapleader=","
+let maplocalleader="\\"
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
 set omnifunc=syntaxcomplete#Complete
-set nowrap
-set hlsearch
-" filetype plugin on
-" au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Snippets variables
 let g:snips_author='Nelson Efrain A. Cruz'
@@ -104,39 +107,12 @@ let g:email='neac03@gmail.com'
 let g:snips_github='https://github.com/nerones'
 let g:github='https://github.com/nerones'
 
-let g:snipMate = { 'snippet_version' : 1 }
+let g:snipMate = { 'snippet_version' : 0 }
 
-set wildmode=longest:full
-set wildmenu
-set incsearch
-set laststatus=2
-"let g:airline#extensions#branch#enabled = 1
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-"" let g:airline_powerline_fonts = 0
-"let g:airline_symbols_ascii = 1
-
-" set foldmethod=syntax
-" set foldlevelstart=99           " start out with everything unfolded
-
-" NERDTree settings {{{
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
-nnoremap <leader>N :NERDTreeClose<CR>
-
-" Show hidden files, too
-let NERDTreeShowHidden=1
-
-" Quit on opening files from the tree
-let NERDTreeQuitOnOpen=0
-
-" Highlight the selected entry in the tree
-let NERDTreeHighlightCursorline=1
-
-" Don't display these kinds of files
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-      \ '\.o$', '\.so$', '\.egg$', '^\.git$', '__pycache__', '\.DS_Store' ]
-
+" NvimTree settings {{{
+nnoremap <leader>n :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>N :NvimTreeClose<CR>
 " }}}
 
 " Keep undo history across sessions by storing it in a file
@@ -149,26 +125,70 @@ set undofile
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {'dir': '\v[\/]\.?(node_modules|vendor|.cache|git|android\/.gradle|android\/app\/build)$'}
+let g:ctrlp_working_path_mode = 'a'
 
 " Agrega el comando :Todo para ver los todo|fixme
 command Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 
-" neomake settings {{{
-"autocmd! BufWritePost * Neomake
-" call neomake#configure#automake('rw', 1000)
-" let g:neomake_php_phpcs_args_standard = 'PSR2'
-" let g:neomake_verbose = 3
-"let g:neomake_php_phpcs_args_standard = 'vendor/nerones/codeigniter-phpcs/CodeIgniter/'
-" }}}
 let g:ale_completion_enabled = 0
-let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" let g:ale_php_phpstan_executable = 'vendor/bin/phpstan'
+let g:ale_disable_lsp = 1
+let g:ale_php_phpcbf_standard='PSR2'
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'php': ['phpcbf', 'php_cs_fixer', 'remove_trailing_lines', 'trim_whitespace'],
+  \}
 
 "for tagbar
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+"nnoremap <silent> <Leader>b :TagbarToggle<CR>
 let g:mustache_abbreviations = 1
 
-let g:local_vimrc_options = {}
-let g:local_vimrc_options.whitelist = ['/home/nelson/workspace/']
-
-
 tnoremap <leader>n <C-\><C-n>
+
+let g:coc_global_extensions = ['coc-html', 'coc-emmet', 'coc-yaml', 'coc-vetur', 'coc-tsserver', 'coc-phpls', 'coc-json', 'coc-css', 'coc-angular', 'coc-html-css-support', 'coc-snippets']
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Coc snippets configs
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+"" End Coc snippets configs
+
+" Telescope
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+lua require('nvim')

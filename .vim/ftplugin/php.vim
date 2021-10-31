@@ -35,4 +35,8 @@ noremap <leader>t :!vendor/bin/phpunit %<cr>
   nmap <buffer> <silent> <Leader>ee :PhpactorExtractExpression<CR>
   vmap <buffer> <silent> <Leader>ee :<C-u>PhpactorExtractExpression<CR>
   vmap <buffer> <silent> <Leader>em :<C-u>PhpactorExtractMethod<CR>
+
+  nmap <buffer> <Leader>ga :PhpactorGenerateAccessor<CR>
+  nmap <buffer> <Leader>cm :PhpactorContextMenu<CR>
 "augroup END
+"

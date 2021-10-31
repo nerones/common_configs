@@ -5,7 +5,8 @@
 [github]
 	user = nerones
 [core]
-	editor = vim
+	editor = nvim
+	fileMode = false
 [diff]
 	guitool = meld
 	tool = meld
