@@ -1,0 +1,82 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- NVIM STARTING ---
+000.328  000.321: locale set
+000.666  000.337: inits 1
+000.710  000.044: window checked
+000.713  000.003: parsing arguments
+000.792  000.079: expanding arguments
+000.851  000.060: inits 2
+001.466  000.614: init highlight
+001.467  000.001: waiting for UI
+002.591  001.124: done waiting for UI
+002.642  000.051: initialized screen early for UI
+006.824  001.154  001.154: sourcing /home/nelson/.local/share/nvim/site/autoload/plug.vim
+016.432  000.009  000.009: sourcing /home/nelson/.local/share/nvim/plugged/vim-fugitive/ftdetect/fugitive.vim
+016.477  000.009  000.009: sourcing /home/nelson/.local/share/nvim/plugged/vim-blade/ftdetect/blade.vim
+016.516  000.010  000.010: sourcing /home/nelson/.local/share/nvim/plugged/vim-vue/ftdetect/vue.vim
+016.550  000.007  000.007: sourcing /home/nelson/.local/share/nvim/plugged/vim-javascript/ftdetect/flow.vim
+016.581  000.023  000.023: sourcing /home/nelson/.local/share/nvim/plugged/vim-javascript/ftdetect/javascript.vim
+016.665  000.009  000.009: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/ftdetect/gdscript.vim
+016.681  000.008  000.008: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/ftdetect/gomod.vim
+016.702  000.015  000.015: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/ftdetect/hcl.vim
+016.724  000.014  000.014: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/ftdetect/query.vim
+016.740  000.009  000.009: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/ftdetect/yang.vim
+017.332  006.400  006.288: sourcing /usr/local/share/nvim/runtime/filetype.vim
+017.601  000.027  000.027: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+017.860  000.024  000.024: sourcing /usr/local/share/nvim/runtime/indent.vim
+018.490  000.244  000.244: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+018.718  000.581  000.337: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+018.778  000.750  000.169: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+049.613  003.758  003.758: sourcing /home/nelson/.local/share/nvim/plugged/tokyonight.nvim/colors/tokyonight.vim
+050.166  047.395  035.283: sourcing /home/nelson/.config/nvim/init.vim
+050.168  000.131: sourcing vimrc file(s)
+050.364  000.031  000.031: sourcing /home/nelson/.local/share/nvim/plugged/vim-snippets/plugin/vimsnippets.vim
+052.037  001.638  001.638: sourcing /home/nelson/.local/share/nvim/plugged/emmet-vim/plugin/emmet.vim
+053.373  001.281  001.281: sourcing /home/nelson/.local/share/nvim/plugged/vim-fugitive/plugin/fugitive.vim
+053.543  000.124  000.124: sourcing /home/nelson/.local/share/nvim/plugged/vim-commentary/plugin/commentary.vim
+053.900  000.197  000.197: sourcing /home/nelson/.local/share/nvim/plugged/ctrlp.vim/autoload/ctrlp/mrufiles.vim
+053.994  000.412  000.215: sourcing /home/nelson/.local/share/nvim/plugged/ctrlp.vim/plugin/ctrlp.vim
+054.689  000.095  000.095: sourcing /home/nelson/.local/share/nvim/plugged/ale/autoload/ale/events.vim
+054.819  000.752  000.657: sourcing /home/nelson/.local/share/nvim/plugged/ale/plugin/ale.vim
+055.084  000.098  000.098: sourcing /home/nelson/.local/share/nvim/plugged/coc.nvim/autoload/coc/rpc.vim
+055.563  000.413  000.413: sourcing /home/nelson/.local/share/nvim/plugged/coc.nvim/autoload/coc/util.vim
+055.865  000.149  000.149: sourcing /home/nelson/.local/share/nvim/plugged/coc.nvim/autoload/coc/client.vim
+059.669  004.808  004.149: sourcing /home/nelson/.local/share/nvim/plugged/coc.nvim/plugin/coc.vim
+059.782  000.038  000.038: sourcing /home/nelson/.local/share/nvim/plugged/nvim-web-devicons/plugin/nvim-web-devicons.vim
+059.926  000.100  000.100: sourcing /home/nelson/.local/share/nvim/plugged/nvim-tree.lua/plugin/tree.vim
+061.082  001.105  001.105: sourcing /home/nelson/.local/share/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.vim
+061.177  000.030  000.030: sourcing /home/nelson/.local/share/nvim/plugged/plenary.nvim/plugin/plenary.vim
+061.658  000.443  000.443: sourcing /home/nelson/.local/share/nvim/plugged/telescope.nvim/plugin/telescope.vim
+061.900  000.012  000.012: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+061.917  000.008  000.008: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+061.980  000.055  000.055: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+061.998  000.009  000.009: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+062.131  000.125  000.125: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+062.157  000.015  000.015: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+062.280  000.114  000.114: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+062.368  000.077  000.077: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+062.399  000.018  000.018: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+062.420  000.012  000.012: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+062.505  000.074  000.074: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+062.529  000.015  000.015: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+062.554  000.013  000.013: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+063.030  001.554: loading plugins
+063.146  000.116: loading packages
+063.408  000.262: loading after plugins
+063.418  000.010: inits 3
+069.521  006.103: reading ShaDa
+069.894  000.133  000.133: sourcing /home/nelson/.local/share/nvim/plugged/ale/autoload/ale.vim
+069.957  000.303: opening buffers
+079.430  009.473: BufEnter autocommands
+079.433  000.003: editing files in windows
+079.545  000.112: VimEnter autocommands
+079.547  000.002: UIEnter autocommands
+079.548  000.001: before starting main loop
+080.262  000.636  000.636: sourcing /home/nelson/.local/share/nvim/plugged/coc.nvim/autoload/coc/float.vim
+081.349  001.165: first screen update
+081.350  000.002: --- NVIM STARTED ---

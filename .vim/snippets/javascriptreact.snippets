@@ -1,0 +1,14 @@
+# Functional components
+snippet rfc "react functional component" b
+import React from "react"
+
+const ${1:`!p snip.rv = snip.basename`} = (${2}) => {
+	return(
+		<div>
+			${3:<p>Body</p>}
+		</div>
+		)
+}
+
+export default $4`!p snip.rv = snip.basename`
+endsnippet

@@ -73,6 +73,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'morhetz/gruvbox'
 " Plug 'romainl/Apprentice'
 Plug 'folke/tokyonight.nvim'
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 "Plug 'tpope/vim-vividchalk'
 "Plug 'junegunn/seoul256.vim'
 
@@ -107,7 +108,7 @@ let g:email='neac03@gmail.com'
 let g:snips_github='https://github.com/nerones'
 let g:github='https://github.com/nerones'
 
-let g:snipMate = { 'snippet_version' : 0 }
+" let g:snipMate = { 'snippet_version' : 0 }
 
 " NvimTree settings {{{
 nnoremap <leader>n :NvimTreeToggle<CR>
@@ -138,7 +139,14 @@ let g:ale_php_phpcbf_standard='PSR2'
 let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'php': ['phpcbf', 'php_cs_fixer', 'remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript': ['eslint'],
   \}
+
+" Disable linting for all minified JS files.
+let g:ale_pattern_options = {
+\  '\.min.js$': {'ale_enabled': 0},
+\  'js/app.js$': {'ale_enabled': 0},
+\}
 
 "for tagbar
 "nnoremap <silent> <Leader>b :TagbarToggle<CR>
