@@ -10,7 +10,6 @@ require("onenord").setup({
   },
 })
 
-vim.cmd[[colorscheme onenord]]
 --vim.cmd[[colorscheme base16-darktooth]]
 --let g:gruvbox_italic=1
 --let g:gruvbox_contrast_dark = 'medium'
