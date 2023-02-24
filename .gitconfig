@@ -1,7 +1,11 @@
 [user]
 	name = Nelson Efrain A. Cruz
 	email = neac03@gmail.com
-	signingkey = 9B01FC256B10F83B
+  signingkey = 9B01FC256B10F83B
+[includeIf "gitdir:~/workspace/eci/"]
+  path = ~/.gitconfig-eci
+[includeIf "gitdir:~/workspace/luxer/"]
+  path = ~/.gitconfig-luxer
 [github]
 	user = nerones
 [core]
@@ -33,3 +37,8 @@
 	process = git-lfs filter-process
 [pull]
 	ff = only
+[safe]
+	directory = /home/nelson/workspace/neovim
+	directory = /home/nelson/workspace/neovim
+[init]
+	defaultBranch = main
