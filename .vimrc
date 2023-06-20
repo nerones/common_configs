@@ -89,6 +89,7 @@ Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'github/copilot.vim'
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
