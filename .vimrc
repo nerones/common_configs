@@ -74,6 +74,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'morhetz/gruvbox'
 " Plug 'romainl/Apprentice'
 Plug 'folke/tokyonight.nvim'
+Plug 'rebelot/kanagawa.nvim'
 Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 "Plug 'tpope/vim-vividchalk'
 "Plug 'junegunn/seoul256.vim'

@@ -2,13 +2,15 @@
 -- vim.g.tokyonight_hide_inactive_statusline = true
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd[[colorscheme tokyonight]]
-local colors = require("onenord.colors")
+vim.cmd("colorscheme kanagawa")
 
-require("onenord").setup({
-  custom_highlights = {
-    TablineSel = { fg = colors.fg, bg = colors.selection }
-  },
-})
+-- local colors = require("onenord.colors")
+
+-- require("onenord").setup({
+--   custom_highlights = {
+--     TablineSel = { fg = colors.fg, bg = colors.selection }
+--   },
+-- })
 
 --vim.cmd[[colorscheme base16-darktooth]]
 --let g:gruvbox_italic=1
