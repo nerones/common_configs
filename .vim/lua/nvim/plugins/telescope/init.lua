@@ -9,6 +9,7 @@ require('telescope').setup {
       '--line-number',
       '--column',
       '--smart-case',
+      '--hidden',
     },
   },
   pickers = {
