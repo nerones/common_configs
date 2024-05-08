@@ -17,6 +17,7 @@ require('lualine').setup {
       {
         'diagnostics',
         sources = {'ale'},
+        symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
       }
     },
     lualine_z = {'location'}

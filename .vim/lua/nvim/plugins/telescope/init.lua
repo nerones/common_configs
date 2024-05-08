@@ -1,6 +1,6 @@
 require('telescope').setup {
   defaults = {
-    file_ignore_patterns = {"node_modules", ".git/", "vendor", "android/app/build", ".idea"},
+    file_ignore_patterns = {"node_modules", ".git/", "vendor", "android/app/build", ".idea", "dist"},
     vimgrep_arguments = {
       'rg',
       '--color=never',

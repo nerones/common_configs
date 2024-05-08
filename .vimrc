@@ -218,4 +218,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+let g:copilot_filetypes = {'gitcommit': v:true}
+
 lua require('nvim')
