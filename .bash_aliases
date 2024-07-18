@@ -28,3 +28,8 @@ alias pame='php artisan make:event'
 alias pammo='php artisan make:model'
 alias pamm='php artisan make:migration'
 alias pams='php artisan make:seed'
+
+# Docker compose
+alias dct='docker compose stop'
+alias dcu='docker compose up'
+alias dcud='docker compose up -d'
