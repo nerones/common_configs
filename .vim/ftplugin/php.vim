@@ -9,10 +9,7 @@ set softtabstop=4   " Sets the number of columns for a TAB
 
 setlocal omnifunc=phpactor#Complete
 
-let g:ale_php_phpmd_ruleset = 'codesize,controversial,design,naming,unusedcode'
-
-let g:syntastic_php_phpcs_args='--standard=PSR2'
-let g:syntastic_php_checkers = ['php', 'phpmd', 'phpcs']
+" let g:ale_php_phpmd_ruleset = 'codesize,controversial,design,naming,unusedcode'
 
 noremap <leader>t :!vendor/bin/phpunit %<cr>
 
