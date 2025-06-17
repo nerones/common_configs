@@ -1,1 +1,3 @@
-require("lspconfig").htmx.setup({})
+vim.lsp.config("htmx", {
+	filetypes = { "htmx" },
+})

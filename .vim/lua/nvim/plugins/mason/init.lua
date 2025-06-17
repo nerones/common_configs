@@ -18,7 +18,7 @@ end
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"ts_ls",
-		"volar",
+		-- "volar",
 		"tailwindcss",
 		"cssls",
 		"yamlls",
