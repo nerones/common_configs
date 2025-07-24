@@ -29,6 +29,20 @@ require("telescope").setup({
 	},
 })
 
+-- hack to prevent double border when winborder = 'rounded' and telescope is opened
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TelescopeFindPre",
+	callback = function()
+		vim.opt_local.winborder = "none"
+		vim.api.nvim_create_autocmd("WinLeave", {
+			once = true,
+			callback = function()
+				vim.opt_local.winborder = "rounded"
+			end,
+		})
+	end,
+})
+
 -- require('telescope').load_extension('coc')
 require("telescope").load_extension("fzf")
 

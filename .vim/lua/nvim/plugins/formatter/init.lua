@@ -18,6 +18,7 @@ require("conform").setup({
 		vue = { "eslint_d" },
 		astro = { "eslint_d" },
 		yaml = { "prettierd" },
+		prisma = { lsp_format = true }, -- Use LSP formatting for Prisma files
 	},
 	format_on_save = {
 		-- These options will be passed to conform.format()
